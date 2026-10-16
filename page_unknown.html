@@ -1,0 +1,209 @@
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta
+		http-equiv="Cache-Control"
+		content="no-cache, no-store, must-revalidate"
+	/>
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
+	<style type="text/css">
+						html
+						{
+						    background-image: url('/assets/images/Gacharoom_unknown_bg.png');
+						    background-position:center center;
+						    background-repeat:repeat;
+						    background-size:10%;
+						}
+						@font-face {
+				font-family: 'Determination Mono';
+				src: url('assets/fonts/determination-mono.ttf') format('truetype');
+				}
+				.dialogue-box {
+		position: fixed;
+		text-shadow: 2.01px 2.01px 0px #0f0f71;
+		background-color: transparent;
+		padding: 7.5px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		margin: 0 auto;
+		margin-left: 11rem;
+		margin-top: 26rem;
+		box-sizing: border-box;
+		image-rendering: pixelated;
+		font-size: 49.5px;
+		line-height: 54px;
+		color: #fff;
+		border-image: url(
+		'https://oliverspace.neocities.org/textbox.gif'
+		) 37 / 37px repeat;/* you can change the image border */
+		border-width: 39px;
+		border-image-slice: 27.6% fill;
+		min-height: 252px;
+		width: 900px;
+		text-align: left;
+		overflow:hidden;
+		z-index: 99999;
+		}
+
+		.dialogue-box img {
+		position: absolute;
+		top: 17px;
+		left: 17px;
+		width: 0px;
+		height: auto;
+		z-index: 10;
+		image-rendering: pixelated;
+		}
+
+		.dialogue-box p {
+		text-indent: -9px;
+		width: 1200px;
+		margin-left: 0;
+		padding-left: 50px;
+		padding-top: 25px;
+		margin-top: 15px;
+		display: block;
+		white-space: pre-wrap;
+		font-family: 'Determination Mono';
+		z-index: 99999;
+		}
+	</style>
+	<title>1225</title>
+	<script>
+		function leftArrowPressed() {
+		  var element = document.getElementById("image1");
+		  element.style.left = parseInt(element.style.left) - 1 + 'px';
+		}
+
+		function rightArrowPressed() {
+		  var element = document.getElementById("image1");
+		  element.style.left = parseInt(element.style.left) + 1 + 'px';
+
+		}
+
+		function upArrowPressed() {
+		  var element = document.getElementById("image1");
+		  element.style.top = parseInt(element.style.top) - 1 + 'px';
+		}
+
+		function downArrowPressed() {
+		  var element = document.getElementById("image1");
+		  element.style.top = parseInt(element.style.top) + 1 + 'px';
+		}
+
+		function moveSelection(evt) {
+		  switch (evt.keyCode) {
+		    case 37:
+		      leftArrowPressed();
+		      break;
+		    case 39:
+		      rightArrowPressed();
+		      break;
+		    case 38:
+		      upArrowPressed();
+		      break;
+		    case 40:
+		      downArrowPressed();
+		      break;
+		  }
+		};
+
+		function docReady() {
+		  window.addEventListener('keydown', moveSelection);
+		}
+	</script>
+	<script>
+		const dialogueA = [
+		              { text: "* You used the machine."},
+		              { text: "* ... The capsule came out."},
+		              { text: "* Inside was something hard like\n   lacquer."},
+		              { text: "* It was a small, dark, triangle."},
+		              { text: "* You tried to take it..."},
+		              { text: "* But, it slipped through your\n   hand"},
+		              { text: "* And you couldn't find it\n   anymore."},
+		              { text: "* You couldn't find                 \n         \n   your hand."}];
+		      const dialogueConfigs = [ {
+		      	id: 1,
+		      	script: dialogueA
+		      	}
+		      	];
+	</script>
+</head>
+<body>
+	<div onload="docReady()" onkeydown="" onkeyup="">
+		<img
+			id="image1"
+			src="/assets/images/Gacharoom_unknown_map.png"
+			style="position:absolute;left:0rem;top:0rem;width:200rem;height:auto;"
+		/>
+	</div>
+	<div>
+		<div class="machine" onclick="machine()"></div>
+		<div class="The"></div>
+		<div class="The2"></div>
+		<!-- <div class="h"></div> -->
+		<script>
+			function machine() {
+				document.getElementById('dialogue-box-1').style.opacity = '1'
+				document.body.classList.toggle('you-couldnt-find-it-anymore');
+			}
+		</script>
+		<div id="dialogue-box-1" class="dialogue-box" style="opacity:0;">
+			<img id="speaker-img-1" src="nothing.png" alt="Icon" />
+			<p id="dialogue-text-1"></p>
+		</div>
+		<style>
+			.machine {
+			  width: 100px;
+			  height: 150px;
+			  background-color: #00000000;
+			  position: absolute;
+			  top: 1;
+			  left: calc(115rem + 35px);
+			  top: calc(150rem + 50px);
+			  z-index: 9997;
+			}
+			.The {
+			  width: 12.5vw;
+			  height: 100%;
+			  background-color: #000000;
+			  position: fixed;
+			  top: -1;
+			  left: 1px;
+			  z-index: 9999;
+			 }
+			.The2 {
+			  width: 12.5vw;
+			  height: 100%;
+			  background-color: #000000;
+			  position: fixed;
+			  top: -1;
+			  right: 1px;
+			  z-index: 9999;
+			 }
+			 .h {
+			 	position: fixed;
+			 	top: -5px;
+			 	width: 100%;
+			 	height: calc(100% + 10px);
+			 	background-color: #d264af55;
+			 	z-index: 9998;
+			 }
+			body {
+			         cursor: auto; /* You couldn't find */
+			         }
+			         .you-couldnt-find-it-anymore { /* your hand. */
+			         cursor: url('assets/images/nothing.png'), auto;
+			         }
+		</style>
+	</div>
+	<audio
+		id="findher"
+		src="/assets/audio/Findher.ogg"
+		type="audio/ogg"
+		style="display:none;"
+		autoplay
+		loop
+	></audio>
+	<script src="/assets/JavaScript/dialogue-box.js"></script>
+</body>
