@@ -1,0 +1,320 @@
+@charset "UTF-8";
+
+/* I know, my code sucks and is hobbled together garbage but it works. */
+
+@font-face {
+    font-family: "scunthorpesans";
+    src: url("../fonts/scunthorpe-sans.woff") format("woff");
+}
+
+:root {
+    --content-height: 16.5rem;
+}
+
+.content {
+	position: absolute;
+	margin-top: 1rem;
+    margin-left: 10rem;
+	left: 50%;
+	transform: translate(-50%, 0%);
+    height: var(--content-height);
+}
+
+.sidebar {
+	background: #1997;
+	padding: 1rem;
+	margin-bottom: 2rem;
+	border-style: inset;
+ 	border-radius: 5px;
+	position: fixed;
+    margin-top: 1rem;
+    left: 2rem;
+    width: 18rem;
+    height: 85%;
+}
+
+body {
+  background: url("https://roaringknight.nekoweb.org/assets/images/Depths.png") repeat;
+  background-size: 200px;
+  animation: lv 100000s linear infinite;
+  animation-duration: 800000s;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  background-color: #12259750;
+  background-blend-mode: multiply;
+  color: white;
+}
+@keyframes lv {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 4000000px 4000000px;
+  }
+}
+
+.commentbox {
+    margin-top: -2rem;
+    margin-left: 2.5rem;
+   	position: absolute;
+	left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.logo {
+    display: flex;
+	justify-content: center;
+}
+
+.wrapper {
+	width: 100%;
+	max-width: 5rem;
+}
+
+.emoji-button {
+	padding: 6px 10px;
+	font-size: 18px;
+	cursor: pointer;
+}
+
+.emoji-menu {
+	display: none;
+	background: inherit; /* change bg as needed */
+	border-style: inset;
+	border-radius: 5px; /* same as above */
+	padding: 6px; /* i just like padding it makes it look nice */
+	margin-top: 0;
+	z-index: 100;
+}
+
+.emoji-menu.open {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+}
+
+.emoji-menu img {
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
+	transition: transform 0.25s;
+}
+
+.emoji-menu img:hover {
+	transform: scale(1.15);
+}
+
+.emoji {
+	vertical-align: middle;
+	margin: 0 2px;
+	width: 35px;
+	height: 35px;
+	display: inline-block;
+}
+
+.post {
+	background: #1997;
+	font-family: "Georgia", Georgia, serif;
+	padding: 1rem;
+	margin-left: 5rem;
+	margin-bottom: 2rem;
+	border-style: inset;
+	border-radius: 5px;
+	max-width: 40rem;
+}
+
+.post p {
+	margin-top: 0;
+}
+
+.post p:last-child {
+	margin-bottom: 0;
+}
+
+.post .screenshot {
+	image-rendering: pixelated;
+	height: 32px;
+	width: 32px;
+	padding: 1rem;
+	border: 2px inset white;
+}
+
+.post-footer {
+	margin-top: 2rem;
+	padding: 0.5rem 0;
+	border-top: 1px dashed black;
+	border-bottom: 1px dashed black;
+}
+
+.post-footer div:not(:first-child) {
+	margin-top: 0.5rem;
+}
+
+.post-footer strong {
+	margin-right: 0.25rem;
+}
+
+
+/* Main */
+#c_widget {
+    box-sizing: border-box;
+    overflow: auto;
+    padding: 20px;
+    background-image: url('sparkle-bg.gif'); /* F2U background provided by https://sadgrl.online/webmastery/downloads/tiledbgs */
+    background-attachment: fixed;
+    font-family: 'scunthorpesans';
+    font-size: 16px;
+    color: black;
+}
+
+#c_widget button, #c_widget input[type=submit] {
+    padding: 4px;
+    font-family: 'scunthorpe-sans';
+    text-decoration: none;
+	text-align: center;
+    text-transform: uppercase;
+	background-color: #1997;
+    color: #122597;
+	border-style: inset;
+	border-radius: 5px;
+}
+#c_widget button:hover, #c_widget input[type=submit]:hover {
+    color: black;
+	border-style: inset;
+	border-radius: 5px;
+}
+#c_widget button:disabled, #c_widget input[type=submit]:disabled {opacity: 60%;}
+#c_widget button:disabled:hover, #c_widget input[type=submit]:disabled:hover {
+    color: #122597;
+	border-style: inset;
+	border-radius: 5px;
+}
+
+/* Input section */
+#c_inputDiv {
+    margin-bottom: 15px;
+    padding: 10px;
+	background-color: #1997;
+	border-style: inset;
+	border-radius: 5px;
+}
+
+#c_widgetTitle {
+    margin: -10px;
+    margin-bottom: 10px;
+    padding: 5px;
+    text-transform: uppercase;
+    font-style: italic;
+    font-weight: bold;
+    text-align: right;
+    color: white;
+    background-color: #122597;
+}
+
+.c-inputWrapper {
+    display: block;
+    text-align: right;
+}
+.c-input {
+    padding: 4px;
+    color: white;
+	border-style: inset;
+	border-radius: 5px;
+	outline: none;
+    background-color: #971225;
+}
+.c-input:focus {border: 1px solid #122597;}
+
+.c-textInput {
+    width: calc(100% - 10px);
+    max-width: 900px;
+    resize: none;
+}
+#c_submitButton {
+    display: block; 
+    margin-left: auto; 
+    margin-right: 0;
+}
+#c_replyingText {
+    color: black;
+    text-align: right;
+}
+
+/* Comment section */
+.c-comment {
+    margin-bottom: 15px;
+    padding: 10px;
+	border-style: inset;
+	border-radius: 5px;
+    background-color: #122597; 
+}
+.c-reply {
+    display: block;
+    width: 90%;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: 0;
+    padding: 10px;
+	border-style: inset;
+	border-radius: 5px;
+    background-color: #122597; 
+}
+.c-reply:last-child {margin-bottom: 0;}
+.c-replyContainer {
+    margin: -10px;
+    margin-top: 10px;
+    padding: 10px;
+	background-color: #1997;
+}
+
+.c-name {
+    display: inline-block;
+    margin: 0;
+    margin-right: 10px;
+    padding: 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+}
+.c-site {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+}
+.c-site:hover {color: black;}
+.c-timestamp {
+    float: right;
+    opacity: 75%;
+    color: white;
+}
+.c-text {
+    margin: 0;
+    margin-left: -10px;
+    margin-right: -10px;
+    padding: 10px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-variant-ligatures: discretionary-ligatures;
+    font-variant-ligatures: discretionary-ligatures;
+    font-family: 'scunthorpesans';
+    font-size: 14px;
+    text-align: justify;
+    color: black;
+	background-color: #1997;
+}
+
+/* Pagination */
+#c_pagination {text-align: center;}
+.c-replyButton {
+    margin-top: 10px;
+    margin-right: 4px;
+}
+.c-expandButton {
+    margin-top: 10px;
+    margin-left: 4px;
+}
+.c-paginationButton {
+    margin-right: 4px;
+    margin-left: 4px;
+}
