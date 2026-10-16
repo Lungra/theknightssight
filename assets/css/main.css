@@ -34,7 +34,7 @@
 }
 
 body {
-  background: url("https://roaringknight.nekoweb.org/assets/images/Depths.png") repeat;
+  background: url("../images/Depths.png") repeat;
   background-size: 200px;
   animation: lv 100000s linear infinite;
   animation-duration: 800000s;
